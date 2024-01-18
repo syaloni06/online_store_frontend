@@ -1,0 +1,30 @@
+<!-- <p>{{posts|json}}</p> -->
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Adding to Cart</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of posts">
+                <th>{{i.id}}</th>
+                <td>{{i.name}}</td>
+                <td><h3>{{i.stk}}</h3></td>
+                <td><h3>{{i.price}}</h3></td>
+                <td><input type="number" name="qty" id=i.id [(ngModel)]="qty" ></td>
+                <td><button type="submit" (click)="onAddToCart(i.id, i.name, i.price)">Add To Cart</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<button type="submit" (click)="placeOrder()" class="btn btn-primary">Place Order</button>
+
+<p>{{cust|json}}</p>

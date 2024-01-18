@@ -1,0 +1,25 @@
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Update</th>
+                <th>Delete Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of posts">
+                <td>{{i.id}}</td>
+                <td><input type="text" [(ngModel)]="i.name"></td>
+                <td><input type="number" [(ngModel)]="i.stk"></td>
+                <td><input type="number" [(ngModel)]="i.price"></td>
+                <td><button type="submit" (click)="update(i.id, i.name, i.stk, i.price)">Update</button></td>
+                <td><button type="submit" (click)="delete(i.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
